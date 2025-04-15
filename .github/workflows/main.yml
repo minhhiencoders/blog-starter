@@ -20,8 +20,8 @@ jobs:
           git fetch origin
           git checkout production
           git pull
-          docker build -t blog-starter:latest .
-          docker stop blog-starter-container || true
-          docker rm blog-starter-container || true
-          docker run -d --name blog-starter-container -p 4000:3000 blog-starter
+          sudo docker build -t blog-starter:latest .
+          sudo docker stop blog-starter-container || true
+          sudo docker rm blog-starter-container || true
+          sudo docker run -d --name blog-starter-container -p 4000:3000 blog-starter
           
