@@ -12,9 +12,11 @@ jobs:
       uses: appleboy/ssh-action@master
       with:
         host: ${{ secrets.HOST }}
+        username: ubuntu
+        key: ${{ secrets.PRIVATE_KEY }}
         port: 22
         script: |
-          cd /services/blog-starter
+          cd /home/ubuntu/services/blog-starter
           git fetch origin
           git checkout production
           git pull
